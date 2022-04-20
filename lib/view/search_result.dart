@@ -4,6 +4,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
    List <Voiture>voitures= [];
+   var indexx=-1 ;
 class Search_Result extends StatefulWidget {
   var location;
   Search_Result({this.location, Key? key }) : super(key: key);
@@ -24,18 +25,21 @@ class _Search_ResultState extends State<Search_Result> {
       body: Padding(
         padding: const EdgeInsets.all(8.0),
         child: ListView.builder(
-          itemCount: 3,
+          itemCount: 100,
           itemBuilder: (BuildContext context, int index) { 
+            
   if( voitures[index].location.contains(widget.location) )
           return GestureDetector(
             onTap: ()async{
                              Widget cancelButton = FlatButton(
     child: Text("Cancel"),
-    onPressed:  () {},
+    onPressed:  () {Navigator.pop(context);},
   );
   Widget continueButton = FlatButton(
     child: Text("Continue"),
-    onPressed:  () {   Navigator.of(context).push(MaterialPageRoute(builder: (context)=>Booking(index:index,)));},
+    onPressed:  () {  
+      indexx=index ;
+       Navigator.of(context).push(MaterialPageRoute(builder: (context)=>Booking(index:index,)));},
   );
                AlertDialog alert = AlertDialog(
     title: Text("Booking cars"),

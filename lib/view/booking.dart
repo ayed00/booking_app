@@ -27,8 +27,8 @@ class _BookingState extends State<Booking> {
   Completer<GoogleMapController> _controller = Completer();
   @override
   Widget build(BuildContext context) {
-     
-    return Scaffold(
+     if(widget.index!=-1) {
+       return Scaffold(
       appBar: AppBar(
         leading: IconButton(
           onPressed: () => Navigator.push(context, MaterialPageRoute(builder: (context)=>Home(),)),
@@ -140,5 +140,6 @@ class _BookingState extends State<Booking> {
         ),
       ),
     );
+     } else return Scaffold(appBar: AppBar(),body: Center(child: Text("aucun booking")),);
   }
 }

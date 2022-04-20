@@ -3,6 +3,7 @@ import 'package:booking_app/view/search_result.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:searchfield/searchfield.dart';
+import 'package:intl/intl.dart';
 class Home extends StatefulWidget {
   const Home({ Key? key }) : super(key: key);
 
@@ -23,9 +24,12 @@ class _HomeState extends State<Home> {
   void initState() {
     // TODO: implement initState
     super.initState();
+    
     picktimeController.text="10:00";
     droptimeController.text="10:00";
   }
+  
+DateTime date=DateTime.now();
   @override
   Widget build(BuildContext context) {
     SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
@@ -34,9 +38,8 @@ class _HomeState extends State<Home> {
     late TextEditingController  locationController =TextEditingController();
      late TextEditingController  dateController =TextEditingController();
    
-  List item=[Home(),Booking()];
+  List item=[Home(),Booking(index:indexx)];
 
-DateTime date=DateTime.now();
 
     return  Scaffold(
       
@@ -77,17 +80,21 @@ DateTime date=DateTime.now();
                    prefixIcon: IconButton(
                      onPressed: ()async{
                       
-        DateTime? newdate = await showDatePicker(
-                context: context, initialDate: date, firstDate: DateTime(2000), lastDate: DateTime(2100));
-                     if(newdate==null)return ;
+       showDatePicker(
+                context: context, initialDate: date, firstDate: DateTime(2000), lastDate: DateTime(2100)
+              
+                ).then((value){
+ if(value==null)return ;
 
-
-                     setState(() {
-                       date=newdate;
+                              
+                    setState(() {
+                       date=value;
                      });
-                       },
+                      
+                } );
+                     },
                      icon: Icon(Icons.date_range)),
-                   hintText: "Select dates{$date}"
+                   hintText: "Select dates{$DateFormat.yMMMd().format(date)}"
                  ),
                  
                ),

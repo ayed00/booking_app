@@ -10,8 +10,9 @@ void main() {
    Voiture v2=Voiture("tesla","assets/images/voiture2.jpg","\$199,4","assets/images/tesla.jpg","nabeul") ;
     Voiture v3=Voiture("bmw","assets/images/voiture3.jpg","\$199,4","assets/images/thrifty.jpg","sousse") ;
 
-  
-    voitures.addAll(<Voiture>[v1,v2,v3]);
+    for(var i=0;i<34;i++) {
+      voitures.addAll(<Voiture>[v1,v2,v3]);
+    }
   runApp(const MyApp());
 }
 
