@@ -144,7 +144,7 @@ DateTime date=DateTime.now();
            
              child: ElevatedButton(onPressed: (){
 
-               Navigator.of(context).push(MaterialPageRoute(builder: ((context) =>Search_Result(location:locationController.text) )));
+               Navigator.of(context).push(MaterialPageRoute(builder: ((context) =>Search_Result(location:locationController.text,picktime: picktimeController.text,droptime: droptimeController.text,) )));
              }, child: Text("Search Cars",style: TextStyle(fontSize: 20),),
              style: ButtonStyle(shape:MaterialStateProperty.all(RoundedRectangleBorder(
                borderRadius:BorderRadius.circular(10) ))),

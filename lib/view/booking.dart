@@ -106,10 +106,10 @@ class _BookingState extends State<Booking> {
            Text('Pickup & Return',style: TextStyle(fontWeight: FontWeight.bold,fontSize: 22)),SizedBox(height: 5,),
           SizedBox(height: 20,),
            Text('Pickup',style: TextStyle(fontWeight: FontWeight.w400,color:Colors.black,fontSize: 18),),
-            Text('07 apr 2020 - 10:00',style: TextStyle(fontWeight: FontWeight.w400,color:Colors.black.withOpacity(0.5),fontSize: 18),),
+            Text('07 apr 2020 - ${voitures[widget.index].picktime}',style: TextStyle(fontWeight: FontWeight.w400,color:Colors.black.withOpacity(0.5),fontSize: 18),),
            SizedBox(height: 30,),
             Text('Return',style: TextStyle(fontWeight: FontWeight.w400,color:Colors.black,fontSize: 18),),
-             Text('10 apr 2020 - 10:00',style: TextStyle(fontWeight: FontWeight.w400,color:Colors.black.withOpacity(0.5),fontSize: 18),),
+             Text('10 apr 2020 - ${voitures[widget.index].droptime}',style: TextStyle(fontWeight: FontWeight.w400,color:Colors.black.withOpacity(0.5),fontSize: 18),),
               ],),
                 )),),
                        Container(

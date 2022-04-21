@@ -6,8 +6,8 @@ import 'package:flutter/material.dart';
    List <Voiture>voitures= [];
    var indexx=-1 ;
 class Search_Result extends StatefulWidget {
-  var location;
-  Search_Result({this.location, Key? key }) : super(key: key);
+  var location,picktime,droptime;
+  Search_Result({this.location,this.picktime,this.droptime, Key? key }) : super(key: key);
 
   @override
   State<Search_Result> createState() => _Search_ResultState();
@@ -28,7 +28,7 @@ class _Search_ResultState extends State<Search_Result> {
           itemCount: 100,
           itemBuilder: (BuildContext context, int index) { 
             
-  if( voitures[index].location.contains(widget.location) )
+  if( voitures[index].location.contains(widget.location) ||voitures[index].picktime.contains(widget.picktime)||voitures[index].picktime.contains(widget.droptime))
           return GestureDetector(
             onTap: ()async{
                              Widget cancelButton = FlatButton(
