@@ -94,7 +94,7 @@ DateTime date=DateTime.now();
                 } );
                      },
                      icon: Icon(Icons.date_range)),
-                   hintText: "Select dates{$DateFormat.yMMMd().format(date)}"
+                   hintText: DateFormat.yMMMd().format(date)
                  ),
                  
                ),
