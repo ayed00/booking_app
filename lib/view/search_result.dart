@@ -28,8 +28,8 @@ class _Search_ResultState extends State<Search_Result> {
           itemCount: 100,
           itemBuilder: (BuildContext context, int index) { 
             
-  if( voitures[index].location.contains(widget.location) ||voitures[index].picktime.contains(widget.picktime)||voitures[index].picktime.contains(widget.droptime))
-          return GestureDetector(
+  if( voitures[index].location.contains(widget.location) ||voitures[index].picktime.contains(widget.picktime)||voitures[index].droptime.contains(widget.droptime)) {
+    return GestureDetector(
             onTap: ()async{
                              Widget cancelButton = FlatButton(
     child: Text("Cancel"),
@@ -100,7 +100,10 @@ class _Search_ResultState extends State<Search_Result> {
                   ),
                 )),
             ),
-          );else return Container();
+          );
+  } else {
+    return Container();
+  }
            },
         ),
         

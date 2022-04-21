@@ -64,7 +64,7 @@ DateTime date=DateTime.now();
                    hintText: "Enter a pickup location"
                  ), suggestions: [
 
-                   for ( var i=0;i<voitures.length;i++)
+                   for ( var i=0;i<3;i++)
                    SearchFieldListItem(voitures[i].location.toString() ,)
                  ],
                  
